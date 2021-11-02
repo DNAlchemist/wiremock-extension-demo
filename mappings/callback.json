@@ -1,0 +1,21 @@
+{
+  "request": {
+    "urlPattern": "/callback",
+    "method" : "GET"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName" : "callback.json"
+  },
+  "postServeActions" : [{
+    "name" : "webhook",
+    "parameters" : {
+      "method" : "POST",
+      "url" : "http://logger:8090/callback",
+      "headers" : {
+        "Content-Type" : "application/json"
+      },
+      "body" : "{ \"result\": \"SUCCESS\" }"
+    }
+  }]
+}

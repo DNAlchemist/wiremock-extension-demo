@@ -1,0 +1,9 @@
+version: '3'
+services:
+  logger:
+    image: bfosberry/http-logger
+  wiremock:
+    build: .
+    command: --extensions org.wiremock.webhooks.Webhooks
+    ports:
+      - 8080:8080
